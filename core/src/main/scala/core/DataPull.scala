@@ -59,7 +59,9 @@ object DataPull {
     /*-------------------JSON INPUT-------------------------------------------------------------------------------------------------*/
     var jsonString = ""
     var isLocal: Boolean = true
-
+    println("*****************************************")
+    println("length of the args: " + args.length)
+    println("*****************************************")
     if (args.length == 0) {
 
       val dp: String = DataPull.getFile("Samples/" + config.inputjson)
@@ -71,6 +73,9 @@ object DataPull {
     } else {
       jsonString = args(0)
       isLocal = false
+      println("---------------------------------------------------")
+      println("length of the input args in else block: " + args(0))
+      println("---------------------------------------------------")
     }
 
     var reportEmailAddress = ""

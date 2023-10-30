@@ -8,22 +8,22 @@ datapull:
       vault_nonce:
       vault_path_login:
   json:
-    inputjson:
+    inputjson: Input_Sample_filesystem-to-filesystem.json
   spark:
-    network:
-    timeout:
-    executor:
-    interval:
-    broadcasttimeout:
-    btimeout:
-    scheduler:
-    mode:
-    failures:
+    network: spark.network.timeout
+    timeout: 10000s
+    executor: spark.executor.heartbeatInterval
+    interval: 1000s
+    broadcasttimeout: spark.sql.broadcastTimeout
+    btimeout: 36000
+    scheduler: spark.scheduler.mode
+    mode: FAIR
+    failures: spark.task.maxFailures
   miscellaneous:
-    no_of_retries:
-    timeout:
+    no_of_retries: 16
+    timeout: 10000
     consul_url:
-    sleeptimeout:
+    sleeptimeout: 60000
   application:
     region:
   logger:
@@ -35,7 +35,7 @@ datapull:
       login:
       password:
       table:
-      driver:
+      driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
     cloudwatch:
       groupName:
       streamName:
